@@ -1,0 +1,42 @@
+{
+  "name": "timestamp-converter",
+  "version": "1.0.0",
+  "description": "简洁的时间戳转换器",
+  "main": "main.cjs",
+  "author": "ruicheng.gu",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron": "electron .",
+    "start": "concurrently \"vite\" \"wait-on http://localhost:5188 && electron .\"",
+    "pack": "vite build && electron-builder --mac --x64"
+  },
+  "build": {
+    "appId": "com.tools.timestamp-converter",
+    "productName": "Timestamp Converter",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.cjs"
+    ],
+    "mac": {
+      "target": "dir",
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
+    }
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^4.5.0",
+    "wait-on": "^7.2.0"
+  }
+}
