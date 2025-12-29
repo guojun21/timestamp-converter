@@ -25,3 +25,10 @@ pnpm-debug.log*
 .DS_Store
 .vscode/
 .idea/
+node_modules/
+dist/
+build/
+*.log
+__pycache__/
+*.pyc
+.env
